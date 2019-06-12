@@ -16,7 +16,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     SCREEN_WIDTH=1360 SCREEN_HEIGHT=1020 SCREEN_DEPTH=24
 
 RUN rm -rf /var/lib/apt/lists/* && apt-get -q update &&\
-  apt-get install -qy --force-yes xvfb fontconfig bzip2 curl bash sudo default-jre\
+  apt-get install -qy --force-yes xvfb fontconfig bzip2 curl bash git sudo default-jre\
     libxss1 libappindicator1 libindicator7 libpango1.0-0 fonts-liberation xdg-utils gconf-service \
   &&\
   apt-get clean &&\
