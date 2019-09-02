@@ -51,5 +51,5 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-type="$SOURCE_TYPE" \
       org.label-schema.vcs-url="https://github.com/danleyb2/web-component-tester.git"
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
 
