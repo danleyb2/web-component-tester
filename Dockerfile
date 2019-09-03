@@ -8,7 +8,7 @@ ARG SOURCE_COMMIT
 ARG DOCKERFILE_PATH
 ARG SOURCE_TYPE
 
-ENV DEBIAN_FRONTEND=noninteractive \ 
+ENV DEBIAN_FRONTEND=noninteractive \
     LANG=en_US.UTF-8 LC_ALL=C.UTF-8 LANGUAGE=en_US.UTF-8 TERM=dumb DBUS_SESSION_BUS_ADDRESS=/dev/null \
     JAVA_HOME=/usr/lib/jvm/java-8-oracle \
     FIREFOX_VERSION=59.0.2 \
@@ -51,5 +51,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-type="$SOURCE_TYPE" \
       org.label-schema.vcs-url="https://github.com/danleyb2/web-component-tester.git"
 
-ENTRYPOINT ["/bin/bash", "-c"]
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
 
+CMD [ "node" ]
